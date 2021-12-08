@@ -1,0 +1,72 @@
+table {
+    width: 100%;
+  
+    }
+    
+  
+    .mat-elevation-z8{
+      width: 70%;
+      margin-left: 16%;
+    }
+  
+    tr.mat-row:hover{
+      background-color: #f2f2f3;
+      cursor: pointer;
+  
+    }
+  
+   
+   
+    tr.mat-header-row {
+      background-color: #33b5e5;
+      color:white;
+  
+    }
+  
+  
+    .mat-fab.mat-primary {
+      background-color: #a3d3e403 !important;
+      height: 36px !important;
+      width: 37px !important;
+      margin-right: 15px;
+  }
+  
+  
+  .mat-icon{
+    margin-top: -17px;;
+  }
+  
+  
+  #filter{
+    font-size: 14px;
+  }
+  
+  #filter1{
+    font-size: 14px;
+  }
+  
+  th.mat-header-cell {
+    color: white;
+    font-size: 15px;
+  }
+  .material-icons {
+  
+    font-size: 21px;
+    color: #33b5e5;
+  }
+  
+  #searchIcon{
+  
+    margin-left: 10%;
+  }
+
+
+span.mat-button-wrapper {
+
+ color:#33b5e5 !important;
+ margin-top:50%;
+
+  }
+
+
+  

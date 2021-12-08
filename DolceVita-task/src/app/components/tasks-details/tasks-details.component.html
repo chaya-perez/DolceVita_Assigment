@@ -1,0 +1,83 @@
+<h1>/ /- - - - - - - - - Dolce-Vita Assignment - by Chaya Perez - - - - - - - - - / /</h1>
+
+<br>
+<br>
+<!-- <app-task-list *ngIf="isShow" (onUpdateTask)="actionOfUpdate($event)"></app-task-list> -->
+
+<button *ngIf="openForm" (click)="showForm()" mat-stroked-button color="primary">Add new Task <mat-icon>
+        add_circle_outline</mat-icon></button>
+<button *ngIf="!openForm" (click)="closeForm()" mat-stroked-button color="primary"> Cancel <mat-icon>cancel</mat-icon>
+</button>
+
+<div id="faildToAdd" *ngIf="!authenticationFlag &&!openForm">
+    <p>
+        <mat-icon>warning</mat-icon> Failed to add new customer, ID already exists, or not valid, please try again.
+    </p>
+</div>
+<form [hidden]="openForm" (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+
+    <div id="formTop">
+        <p>Fill up your's details</p>
+    </div>
+
+
+
+    <!-- Task id -->
+    <mat-form-field appearance="fill">
+        <mat-label>
+            <mat-icon>device_hub</mat-icon> Fill your Task Id
+        </mat-label>
+        <input matInput placeholder="your task_id is:" required minlength="4" maxlength="24" [(ngModel)]="id_task" id="id_task" name="id_task">
+
+    </mat-form-field>
+
+
+
+
+    <!-- status -->
+
+    <mat-form-field appearance="fill">
+        <mat-label>Select status</mat-label>
+        <mat-select [(ngModel)]="status_task" id="status_task" name="status_task">
+            <mat-option>None</mat-option>
+            <mat-option value="option1">in process</mat-option>
+            <mat-option value="option2"> complete</mat-option>
+            <mat-option value="option3">unbeknown</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <!-- task content -->
+
+    <mat-form-field appearance="fill">
+        <mat-label>
+            <mat-icon>power_input</mat-icon> Fill Task content
+        </mat-label>
+        <textarea matInput required minlength="4" maxlength="24" id="content_task" name ="content_task" [(ngModel)]="content_task" #content="ngModel" ></textarea>
+    </mat-form-field>
+
+    
+    <div *ngIf="content.errors && (content.dirty || content.touched)" id="alert alert-danger">
+
+    <div [hidden]="!content.errors.required">
+        <p id="err_msg"> *cotent task is required</p>
+
+    </div>
+    </div>
+
+
+    <!-- Date -->
+    <mat-form-field id="datefield" appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="date_task" id="date_task" name="date_task">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+
+    <button *ngIf="!updt" mat-stroked-button>Add Task</button>
+    <button *ngIf="updt" mat-stroked-button>update Task</button>
+
+    <!-- <button mat-stroked-button [disabled]="!extensionForm.form.valid">Add passwork</button> -->
+
+</form>

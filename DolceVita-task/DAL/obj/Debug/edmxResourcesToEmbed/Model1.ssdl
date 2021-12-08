@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Dolce_vitaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="task_tbl">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="d_Date" Type="date" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="Content_task" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="Dolce_vitaDBModelStoreContainer">
+    <EntitySet Name="task_tbl" EntityType="Self.task_tbl" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

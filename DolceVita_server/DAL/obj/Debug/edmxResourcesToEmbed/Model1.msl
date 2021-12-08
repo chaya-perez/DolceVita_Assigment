@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Dolce_vitaDBModelStoreContainer" CdmEntityContainer="Dolce_vitaDBEntities">
+    <EntitySetMapping Name="task_tbl">
+      <EntityTypeMapping TypeName="Dolce_vitaDBModel.task_tbl">
+        <MappingFragment StoreEntitySet="task_tbl">
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="d_Date" ColumnName="d_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Content_task" ColumnName="Content_task" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
